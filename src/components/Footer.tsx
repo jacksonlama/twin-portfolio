@@ -1,5 +1,5 @@
 
-import { Github, Twitter, Linkedin, Heart, ArrowUp, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Twitter, Linkedin, Heart, ArrowUp, Mail as MailIcon, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,7 +51,7 @@ const Footer = () => {
                   <span className="text-muted-foreground">+1 234 567 890</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail size={16} className="text-yellow mr-2" />
+                  <MailIcon size={16} className="text-yellow mr-2" />
                   <span className="text-muted-foreground">peeling.onion96@gmail.com</span>
                 </div>
                 <div className="flex items-center">

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Send, ArrowRight, ExternalLink, Download } from 'lucide-react';
+import { Phone, Mail as MailIcon, MapPin, Send, ArrowRight, ExternalLink, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
@@ -59,7 +59,7 @@ const Contact = () => {
           <div className={`${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
             <div className="glass-card p-8 rounded-xl border border-border shadow-md h-full">
               <h3 className="text-xl font-semibold mb-6 flex items-center">
-                <Mail className="text-yellow mr-2" />
+                <MailIcon className="text-yellow mr-2" />
                 Contact Information
               </h3>
               
@@ -79,7 +79,7 @@ const Contact = () => {
                 
                 <div className="flex items-start hover-lift p-4 rounded-lg transition-all">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-yellow/10 mr-4">
-                    <Mail className="text-yellow" size={20} />
+                    <MailIcon className="text-yellow" size={20} />
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Email</h4>
