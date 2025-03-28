@@ -1,5 +1,4 @@
-
-import { Code, Database, Server, Globe, UserCircle, Calendar, Award, Briefcase } from 'lucide-react';
+import { Code, Database, Server, Globe, UserCircle, Calendar, Award, Briefcase, Mail as MailIcon } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 import { useState, useEffect } from 'react';
 
@@ -131,7 +130,7 @@ const About = () => {
                 
                 <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-background/40 transition-colors">
                   <div className="w-10 h-10 rounded-full bg-yellow/10 flex items-center justify-center">
-                    <Mail className="text-yellow" size={20} />
+                    <MailIcon className="text-yellow" size={20} />
                   </div>
                   <div className="flex justify-between w-full">
                     <span className="text-muted-foreground">Email:</span>
