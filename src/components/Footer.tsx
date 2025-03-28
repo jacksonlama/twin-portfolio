@@ -1,5 +1,5 @@
 
-import { GitHub, Twitter, Linkedin, Heart, ArrowUp } from 'lucide-react';
+import { Github, Twitter, Linkedin, Heart, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,7 +34,7 @@ const Footer = () => {
               rel="noopener noreferrer" 
               className="w-10 h-10 rounded-full bg-background/50 border border-border flex items-center justify-center hover:bg-yellow hover:text-dark transition-colors"
             >
-              <GitHub size={18} />
+              <Github size={18} />
             </a>
             <a 
               href="https://twitter.com" 

@@ -1,5 +1,5 @@
 
-import { ArrowRight, GitHub, Linkedin, Twitter } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -48,7 +48,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 transition-colors"
                 >
-                  <GitHub size={18} className="text-foreground" />
+                  <Github size={18} className="text-foreground" />
                 </a>
                 
                 <a 
