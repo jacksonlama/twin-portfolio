@@ -1,10 +1,9 @@
-import { Code, Database, Server, Globe, UserCircle, Calendar, Award, Briefcase, Mail as MailIcon } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
+
+import { UserCircle, Calendar, Award, Briefcase, Mail as MailIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [skillsVisible, setSkillsVisible] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +13,6 @@ const About = () => {
         const isInView = rect.top <= window.innerHeight * 0.75;
         if (isInView) {
           setIsVisible(true);
-          setTimeout(() => {
-            setSkillsVisible(true);
-          }, 500);
         }
       }
     };
@@ -26,14 +22,6 @@ const About = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const skills = [
-    { name: "JavaScript", progress: 85 },
-    { name: "React", progress: 80 },
-    { name: "Node.js", progress: 75 },
-    { name: "HTML/CSS", progress: 90 },
-    { name: "SQL", progress: 70 },
-  ];
 
   return (
     <section id="about" className="py-20 bg-card">
@@ -60,36 +48,6 @@ const About = () => {
                 I actively seek out opportunities to expand my knowledge and skills, embracing new technologies and approaches. 
                 Feel free to explore my work and get in touch if you have questions or opportunities to collaborate.
               </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-6 mt-10">
-              <div className="glass-card flex flex-col items-center p-6 rounded-xl border border-border shadow-md hover-lift hover:border-yellow transition-all">
-                <div className="w-12 h-12 rounded-full bg-yellow/10 flex items-center justify-center mb-3">
-                  <Code className="text-yellow" size={24} />
-                </div>
-                <h3 className="text-lg font-medium">Web Development</h3>
-              </div>
-              
-              <div className="glass-card flex flex-col items-center p-6 rounded-xl border border-border shadow-md hover-lift hover:border-yellow transition-all">
-                <div className="w-12 h-12 rounded-full bg-yellow/10 flex items-center justify-center mb-3">
-                  <Database className="text-yellow" size={24} />
-                </div>
-                <h3 className="text-lg font-medium">Database Design</h3>
-              </div>
-              
-              <div className="glass-card flex flex-col items-center p-6 rounded-xl border border-border shadow-md hover-lift hover:border-yellow transition-all">
-                <div className="w-12 h-12 rounded-full bg-yellow/10 flex items-center justify-center mb-3">
-                  <Server className="text-yellow" size={24} />
-                </div>
-                <h3 className="text-lg font-medium">Backend Development</h3>
-              </div>
-              
-              <div className="glass-card flex flex-col items-center p-6 rounded-xl border border-border shadow-md hover-lift hover:border-yellow transition-all">
-                <div className="w-12 h-12 rounded-full bg-yellow/10 flex items-center justify-center mb-3">
-                  <Globe className="text-yellow" size={24} />
-                </div>
-                <h3 className="text-lg font-medium">Responsive Design</h3>
-              </div>
             </div>
           </div>
           
@@ -120,7 +78,7 @@ const About = () => {
                 
                 <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-background/40 transition-colors">
                   <div className="w-10 h-10 rounded-full bg-yellow/10 flex items-center justify-center">
-                    <Globe className="text-yellow" size={20} />
+                    <UserCircle className="text-yellow" size={20} />
                   </div>
                   <div className="flex justify-between w-full">
                     <span className="text-muted-foreground">Location:</span>
@@ -156,30 +114,6 @@ const About = () => {
                     <span className="text-muted-foreground">Experience:</span>
                     <span className="font-medium">&lt; 2 years</span>
                   </div>
-                </div>
-              </div>
-              
-              <div className="mt-10">
-                <h3 className="text-xl font-semibold mb-6">Skills</h3>
-                
-                <div className="space-y-6">
-                  {skills.map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-yellow">{skillsVisible ? `${skill.progress}%` : '0%'}</span>
-                      </div>
-                      <div className="skill-bar">
-                        <div 
-                          className="skill-progress"
-                          style={{ 
-                            width: skillsVisible ? `${skill.progress}%` : '0%',
-                            transition: `width 1s ease-out ${index * 0.2}s`
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
