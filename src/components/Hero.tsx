@@ -1,54 +1,102 @@
 
-import { Mail, Code, FileCode, Download, MessageSquare, Github } from 'lucide-react';
+import { ArrowRight, GitHub, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-16 dark:bg-dark light:bg-gray-50">
+    <section id="home" className="py-20 pt-32 min-h-screen flex items-center bg-background">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="circular-logo w-64 h-64 text-6xl animate-pulse">
-                1:1
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 flex flex-col items-start">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-yellow text-sm mb-6 animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-yellow mr-2"></span>
+              Available for freelance work
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              Hi, I'm <span className="text-yellow">Akhilesh</span><br />
+              Software Engineer
+            </h1>
+            
+            <p className="text-lg text-muted-foreground mb-8 max-w-lg">
+              I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Let's work together to create something amazing.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 mb-10">
+              <Button 
+                onClick={scrollToContact} 
+                className="rounded-full bg-yellow hover:bg-yellow/80 text-dark font-medium px-8 py-6 h-auto flex items-center"
+              >
+                Contact Me
+                <ArrowRight size={16} className="ml-2" />
+              </Button>
+              
+              <div className="flex items-center space-x-4">
+                <a 
+                  href="https://github.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 transition-colors"
+                >
+                  <GitHub size={18} className="text-foreground" />
+                </a>
+                
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 transition-colors"
+                >
+                  <Linkedin size={18} className="text-foreground" />
+                </a>
+                
+                <a 
+                  href="https://twitter.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center hover:bg-primary/10 transition-colors"
+                >
+                  <Twitter size={18} className="text-foreground" />
+                </a>
               </div>
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <div className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-600 mb-2">Hi, I'm</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-yellow">Akhilesh,</h1>
-            
-            <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 mb-8">
-              I'm a Computer Science graduate and a passionate full-time developer. With a strong 
-              foundation in coding principles and a commitment to innovation and learning, I aim to 
-              transform complex problems into elegant, scalable solutions. My journey in the tech world is 
-              fueled by my love for creating and my desire to make a difference through technology. Welcome 
-              to my portfolio, where you can explore my projects, experiences, and the skills I've acquired 
-              along the way. Let's code, learn, and grow together!
-            </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <Button variant="default" className="bg-blue hover:bg-blue-dark rounded-full" size="lg">
-                <Download size={18} className="mr-2" />
-                Download CV
-              </Button>
-              <Button variant="outline" className="border-blue text-blue hover:bg-blue/10 rounded-full" size="lg">
-                <MessageSquare size={18} className="mr-2" />
-                Contact
-              </Button>
-            </div>
-            
-            <div className="flex mt-8 space-x-4 justify-center md:justify-start">
-              <a href="mailto:peeling.onion96@gmail.com" className="text-gray-400 hover:text-yellow transition-colors duration-300">
-                <Mail size={22} />
-              </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow transition-colors duration-300">
-                <Github size={22} />
-              </a>
-              <a href="#projects" className="text-gray-400 hover:text-yellow transition-colors duration-300">
-                <Code size={22} />
-              </a>
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-yellow/20 overflow-hidden flex items-center justify-center relative">
+                <div className="absolute inset-2 rounded-full bg-background overflow-hidden border-4 border-yellow flex items-end justify-center">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="absolute -top-4 -right-4 bg-card rounded-lg p-3 shadow-lg border border-border">
+                <div className="flex items-center">
+                  <div className="w-3 h-3 rounded-full bg-yellow mr-2 animate-pulse"></div>
+                  <span className="text-sm font-medium">Front-End Developer</span>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 bg-card rounded-lg p-3 shadow-lg border border-border">
+                <div className="flex items-center">
+                  <div className="w-3 h-3 rounded-full bg-yellow mr-2 animate-pulse"></div>
+                  <span className="text-sm font-medium">Back-End Developer</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

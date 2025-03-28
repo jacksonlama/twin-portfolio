@@ -102,39 +102,28 @@
   }
 
   .circular-logo {
-    @apply bg-blue rounded-full flex items-center justify-center;
+    @apply bg-yellow text-dark rounded-full flex items-center justify-center font-bold;
   }
 
   .section-heading {
     @apply text-2xl md:text-3xl font-bold relative inline-block mb-8;
   }
 
-  .nav-link {
-    @apply text-gray-300 hover:text-white transition-colors duration-200;
-  }
-  
-  .dark .nav-link {
-    @apply text-gray-300 hover:text-white;
-  }
-  
-  .light .nav-link {
-    @apply text-gray-700 hover:text-gray-900;
+  .section-heading::after {
+    content: '';
+    @apply absolute w-1/2 h-1 bg-yellow left-0 -bottom-2 rounded-full;
   }
 
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+  
   .nav-link.active {
     @apply text-yellow;
   }
 
   .project-card {
-    @apply bg-dark-lighter rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 border border-gray-800;
-  }
-  
-  .dark .project-card {
-    @apply bg-dark-lighter border-gray-800;
-  }
-  
-  .light .project-card {
-    @apply bg-white border-gray-300;
+    @apply bg-card rounded-lg p-6 transition-all duration-300 hover:shadow-lg border border-border;
   }
 
   .project-icon {
@@ -142,17 +131,17 @@
   }
 
   .education-card, .work-experience-card {
-    @apply relative pl-6 pb-6;
+    @apply relative;
   }
 
   .education-card:before, .work-experience-card:before {
     content: '';
-    @apply absolute w-1 h-full bg-yellow left-0 top-0;
+    @apply absolute w-[3px] h-full bg-yellow/50 -left-[20px] top-0 rounded-full;
   }
 
   .education-card:after, .work-experience-card:after {
     content: '';
-    @apply absolute w-3 h-3 bg-yellow rounded-full -left-1 top-2;
+    @apply absolute w-3 h-3 bg-yellow rounded-full -left-[22px] top-2;
   }
 }
 

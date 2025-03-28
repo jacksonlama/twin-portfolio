@@ -1,93 +1,71 @@
 
-import { Calendar, Briefcase } from 'lucide-react';
-
-const EducationItem = ({ title, school, gpa }: { title: string; school: string; gpa: string }) => {
-  return (
-    <div className="education-card mb-6">
-      <h3 className="text-lg font-semibold text-white dark:text-white light:text-gray-900">{title} - {gpa}</h3>
-      <p className="text-gray-400 dark:text-gray-400 light:text-gray-600">{school}</p>
-    </div>
-  );
-};
-
-const WorkExperienceItem = ({ 
-  title, company, period, description 
-}: { 
-  title: string; 
-  company: string;
-  period: string;
-  description: string;
-}) => {
-  return (
-    <div className="work-experience-card mb-6">
-      <div className="flex flex-col">
-        <h3 className="text-lg font-semibold text-white dark:text-white light:text-gray-900">{title} - {company}</h3>
-        <div className="flex items-center text-yellow text-sm mb-2">
-          <Calendar className="mr-2" size={16} />
-          <span>{period}</span>
-        </div>
-        <p className="text-gray-400 dark:text-gray-400 light:text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-};
+import { GraduationCap, Calendar, Award, Briefcase } from 'lucide-react';
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 dark:bg-dark light:bg-gray-50">
+    <section id="education" className="py-20 bg-card">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row gap-10">
-          <div className="w-full md:w-1/2">
-            <h2 className="section-heading text-yellow dark:text-yellow light:text-yellow">Education</h2>
+        <div className="flex flex-col lg:flex-row gap-12">
+          <div className="w-full lg:w-1/2">
+            <h2 className="section-heading flex items-center">
+              <GraduationCap className="mr-3 text-yellow" size={24} />
+              Education
+            </h2>
             
-            <div className="education-timeline p-6 bg-dark-lighter dark:bg-dark-lighter light:bg-white rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200">
-              <div className="space-y-0">
-                <EducationItem 
-                  title="BSC"
-                  school="Sunway Int' Business School"
-                  gpa="3.5 GPA"
-                />
-                
-                <EducationItem 
-                  title="High School"
-                  school="National School of Sciences (NIST)"
-                  gpa="3.2 GPA"
-                />
-                
-                <EducationItem 
-                  title="School"
-                  school="Adhyitya Boarding High School"
-                  gpa="3.5 GPA"
-                />
+            <div className="mt-8 space-y-8">
+              <div className="education-card bg-background/40 rounded-lg p-6 border border-border shadow-lg hover:shadow-yellow/5 transition-all">
+                <div className="flex items-center mb-2">
+                  <Calendar size={18} className="text-yellow mr-2" />
+                  <span className="text-gray-400">2016 - 2020</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-1">Bachelor of Computer Science</h3>
+                <p className="text-muted-foreground">University of Technology</p>
+                <div className="mt-3 flex items-center">
+                  <Award size={16} className="text-yellow mr-2" />
+                  <p className="text-muted-foreground">First Class Honors</p>
+                </div>
+              </div>
+              
+              <div className="education-card bg-background/40 rounded-lg p-6 border border-border shadow-lg hover:shadow-yellow/5 transition-all">
+                <div className="flex items-center mb-2">
+                  <Calendar size={18} className="text-yellow mr-2" />
+                  <span className="text-gray-400">2020 - 2022</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-1">Master of Computer Science</h3>
+                <p className="text-muted-foreground">Advanced Technology Institute</p>
+                <div className="mt-3 flex items-center">
+                  <Award size={16} className="text-yellow mr-2" />
+                  <p className="text-muted-foreground">Distinction</p>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="w-full md:w-1/2">
-            <h2 className="section-heading text-yellow dark:text-yellow light:text-yellow">Work Experience</h2>
+          <div className="w-full lg:w-1/2">
+            <h2 className="section-heading flex items-center">
+              <Briefcase className="mr-3 text-yellow" size={24} />
+              Work Experience
+            </h2>
             
-            <div className="work-timeline p-6 bg-dark-lighter dark:bg-dark-lighter light:bg-white rounded-lg border border-gray-800 dark:border-gray-800 light:border-gray-200">
-              <div className="space-y-0">
-                <WorkExperienceItem 
-                  title="Developer"
-                  company="Midas Technologies"
-                  period="APRIL 2023 - Currently"
-                  description="Experienced in developing Hospital Management Systems, I specialize in PHP (Laravel, CodeIgniter) and Oracle (OCI), for secure data handling. My technical expertise includes HTML, CSS, JavaScript, Bootstrap, ensuring a responsive, scalable, and user-friendly system."
-                />
-                
-                <WorkExperienceItem 
-                  title="Python Intern"
-                  company="Braincube Research"
-                  period="MAR 2021 to OCT 2021"
-                  description="Skilled in Python development using Django, I bring proficiency in Ansible and IoT technologies to the table, showcasing expertise in creating innovative solutions and applications."
-                />
-                
-                <WorkExperienceItem 
-                  title="SEO Executive"
-                  company="Mranble Digital"
-                  period="DEC 2021 to FEB 2023"
-                  description="Served as SEO Analyst and Content Head, bringing a wealth of experience in optimizing digital content and overseeing content strategy."
-                />
+            <div className="mt-8 space-y-8">
+              <div className="work-experience-card bg-background/40 rounded-lg p-6 border border-border shadow-lg hover:shadow-yellow/5 transition-all">
+                <div className="flex items-center mb-2">
+                  <Calendar size={18} className="text-yellow mr-2" />
+                  <span className="text-gray-400">2021 - Present</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-1">Senior Software Engineer</h3>
+                <p className="text-muted-foreground">Tech Innovations Inc.</p>
+                <p className="mt-3 text-gray-400">Developing and maintaining web applications using React, Node.js, and AWS.</p>
+              </div>
+              
+              <div className="work-experience-card bg-background/40 rounded-lg p-6 border border-border shadow-lg hover:shadow-yellow/5 transition-all">
+                <div className="flex items-center mb-2">
+                  <Calendar size={18} className="text-yellow mr-2" />
+                  <span className="text-gray-400">2020 - 2021</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-1">Junior Developer</h3>
+                <p className="text-muted-foreground">StartUp Solutions</p>
+                <p className="mt-3 text-gray-400">Worked on front-end development using React and implemented responsive designs.</p>
               </div>
             </div>
           </div>
