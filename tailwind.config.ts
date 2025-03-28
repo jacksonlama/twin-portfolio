@@ -64,7 +64,9 @@ export default {
 					card: '#1A1A1A'
 				},
 				yellow: {
-					DEFAULT: '#FFD700'
+					DEFAULT: '#FFD700',
+					dark: '#E6C200',
+					light: '#FFDE33'
 				}
 			},
 			borderRadius: {
@@ -92,12 +94,17 @@ export default {
 				'fade-in': {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '1' }
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out forwards'
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			}
 		}
 	},
